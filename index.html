@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        
+
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saul Alexander Che Caamal - CV Interactivo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+            animation: slideInDown 1s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(-10px);
+            }
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-pic i {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .name {
+            font-size: 2.5em;
+            font-weight: 700;
+            background: linear-gradient(45deg, #4facfe, #00f2fe, #43e97b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, rgba(79, 172, 254, 0.15), rgba(67, 233, 123, 0.15));
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(79, 172, 254, 0.3);
+        }
+
+        .contact-item:hover {
+            background: linear-gradient(45deg, rgba(79, 172, 254, 0.25), rgba(67, 233, 123, 0.25));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            animation: slideInUp 1s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-title i {
+            color: #4facfe;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(67, 233, 123, 0.1));
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #4facfe;
+        }
+
+        .skill-item:hover {
+            background: linear-gradient(135deg, rgba(79, 172, 254, 0.2), rgba(67, 233, 123, 0.2));
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(79, 172, 254, 0.2);
+        }
+
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #4facfe, #00f2fe, #43e97b);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+        }
+
+        .education-item,
+        .experience-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-left: 4px solid #43e97b;
+            background: linear-gradient(135deg, rgba(67, 233, 123, 0.1), rgba(240, 147, 251, 0.1));
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(67, 233, 123, 0.1);
+        }
+
+        .education-item:hover,
+        .experience-item:hover {
+            background: linear-gradient(135deg, rgba(67, 233, 123, 0.15), rgba(240, 147, 251, 0.15));
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(67, 233, 123, 0.2);
+        }
+
+        .institution {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .degree {
+            color: #666;
+            font-style: italic;
+        }
+
+        .language-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .language-item {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(240, 147, 251, 0.15), rgba(79, 172, 254, 0.15));
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(240, 147, 251, 0.3);
+        }
+
+        .language-item:hover {
+            background: linear-gradient(135deg, rgba(240, 147, 251, 0.25), rgba(79, 172, 254, 0.25));
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(240, 147, 251, 0.3);
+        }
+
+        .language-item i {
+            font-size: 2em;
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .about-text {
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(79, 172, 254, 0.15), rgba(67, 233, 123, 0.15), rgba(240, 147, 251, 0.15));
+            animation: float 6s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .floating-shape:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+        .floating-shape:nth-child(2) {
+            top: 20%;
+            right: 10%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 2s;
+        }
+
+        .floating-shape:nth-child(3) {
+            bottom: 20%;
+            left: 15%;
+            width: 100px;
+            height: 100px;
+            animation-delay: 4s;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .language-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .name {
+                font-size: 2em;
+            }
+        }
+
+        .btn-download {
+            background: linear-gradient(45deg, #4facfe, #00f2fe, #43e97b);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
+            font-weight: 600;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(79, 172, 254, 0.4);
+            background: linear-gradient(45deg, #00f2fe, #43e97b, #f093fb);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="floating-elements">
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <div class="profile-pic">
+                <!-- Reemplaza "c:\Users\OAT6537\Downloads\Imagen de WhatsApp 2025-09-23 a las 23.46.55_d189d002.jpg" con la URL real de tu imagen -->
+                <img src="Imagen de WhatsApp 2025-09-23 a las 23.46.55_d189d002.jpg" alt="Saul Alexander Che Caamal"
+                    id="profile-image" style="display: none;">
+                <i class="fas fa-user" id="default-icon"></i>
+            </div>
+            <h1 class="name">Saul Alexander Che Caamal</h1>
+            <p class="title">Ingeniero en Sistemas Computacionales</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(52) 983 322 2612</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>saulchecaamal@gmail.com</span>
+                </div>
+            </div>
+            <a href="#" class="btn-download" onclick="alert('Funcionalidad de descarga próximamente')">
+                <i class="fas fa-download"></i>
+                Descargar CV
+            </a>
+        </header>
+
+        <div class="main-content">
+            <div class="card">
+                <h2 class="card-title">
+                    <i class="fas fa-user-circle"></i>
+                    Acerca de Mí
+                </h2>
+                <p class="about-text">
+                    Soy estudiante de Ingeniería en Sistemas Computacionales apasionado por la tecnología y
+                    el funcionamiento de las computadoras. Me gusta aprender nuevas herramientas digitales y
+                    trabajar en equipo. Mi objetivo es seguir creciendo académica y profesionalmente para
+                    contribuir en proyectos innovadores en el futuro.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">
+                    <i class="fas fa-cogs"></i>
+                    Habilidades Técnicas
+                </h2>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div>
+                        <strong>Base de Datos</strong>
+                        <p>MySQL, MongoDB - Creación, manejo y consultas básicas</p>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div>
+                        <strong>Redes</strong>
+                        <p>Fundamentos de redes, configuración básica de dispositivos</p>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <div>
+                        <strong>Paquetería Office</strong>
+                        <p>Word, Excel, PowerPoint</p>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-windows"></i>
+                    </div>
+                    <div>
+                        <strong>Windows</strong>
+                        <p>Uso básico de sistemas operativos</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    Educación
+                </h2>
+                <div class="education-item">
+                    <div class="institution">Instituto Tecnológico Felipe Carrillo Puerto</div>
+                    <div class="degree">Ingeniería en Sistemas Computacionales</div>
+                </div>
+                <div class="education-item">
+                    <div class="institution">Colegio de Bachilleres Plantel Sabán</div>
+                    <div class="degree">Bachillerato</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">
+                    <i class="fas fa-briefcase"></i>
+                    Experiencia Laboral
+                </h2>
+                <div class="experience-item">
+                    <div class="institution">Área de Contabilidad</div>
+                    <div class="degree">Experiencia en área contable gracias a la especialidad</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">
+                    <i class="fas fa-star"></i>
+                    Habilidades Personales
+                </h2>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <strong>Paciencia</strong>
+                        <p>Capacidad para mantener la calma en situaciones complejas</p>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div>
+                        <strong>Perseverante</strong>
+                        <p>Determinación para alcanzar objetivos</p>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <strong>Trabajo en Equipo</strong>
+                        <p>Colaboración efectiva en proyectos grupales</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">
+                    <i class="fas fa-language"></i>
+                    Idiomas
+                </h2>
+                <div class="language-grid">
+                    <div class="language-item">
+                        <i class="fas fa-globe-americas"></i>
+                        <h3>Español</h3>
+                        <p>Nativo</p>
+                    </div>
+                    <div class="language-item">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Maya</h3>
+                        <p>Conversacional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animaciones adicionales
+        document.addEventListener('DOMContentLoaded', function () {
+            // Verificar si hay imagen de perfil
+            const profileImage = document.getElementById('profile-image');
+            const defaultIcon = document.getElementById('default-icon');
+
+            if (profileImage.src && profileImage.src !== window.location.href) {
+                profileImage.style.display = 'block';
+                defaultIcon.style.display = 'none';
+
+                profileImage.onerror = function () {
+                    profileImage.style.display = 'none';
+                    defaultIcon.style.display = 'block';
+                };
+            }
+
+            // Efecto de escritura para el nombre
+            const nameElement = document.querySelector('.name');
+            const originalText = nameElement.textContent;
+            nameElement.textContent = '';
+
+            let i = 0;
+            const typeWriter = () => {
+                if (i < originalText.length) {
+                    nameElement.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            };
+
+            setTimeout(typeWriter, 500);
+
+            // Efecto parallax suave para las formas flotantes
+            document.addEventListener('mousemove', function (e) {
+                const shapes = document.querySelectorAll('.floating-shape');
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
+
+                shapes.forEach((shape, index) => {
+                    const speed = (index + 1) * 0.5;
+                    const x = (mouseX * speed * 10) - 5;
+                    const y = (mouseY * speed * 10) - 5;
+                    shape.style.transform = `translate(${x}px, ${y}px)`;
+                });
+            });
+
+            // Contador de habilidades animado
+            const skillItems = document.querySelectorAll('.skill-item');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    }
+                });
+            });
+
+            skillItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-20px)';
+                item.style.transition = 'all 0.6s ease';
+                observer.observe(item);
+            });
+        });
+
+        // Función para hacer clic en contacto
+        document.querySelectorAll('.contact-item').forEach(item => {
+            item.addEventListener('click', function () {
+                const text = this.textContent.trim();
+                if (text.includes('@')) {
+                    window.location.href = `mailto:${text.split(' ')[1]}`;
+                } else if (text.includes('(')) {
+                    window.location.href = `tel:${text.split(' ')[1]}`;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
